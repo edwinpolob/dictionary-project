@@ -1,0 +1,8 @@
+h2 {text-align: center}
+h1 {text-align: center; color: blue}
+p {text-align: center;}
+p.card-text {text-align: justify;}
+div {text-align: center;}
+.navbar {margin: 0 auto;text-align: center;}
+.d-flex {margin: 0 auto;text-align: center;}
+.card {margin: 0 auto;text-align: center}
