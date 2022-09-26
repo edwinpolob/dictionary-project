@@ -7,7 +7,8 @@ app.config['SECRET_KEY'] = 'mysecretkey'
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    image=os.path.join('static', 'YouWord.jpg')
+    return render_template('index.html', image=image)
 
 
 @app.route("/", methods=['GET', 'POST'])
