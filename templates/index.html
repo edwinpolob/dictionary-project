@@ -14,52 +14,94 @@
 <body>
   <div class="container-fluid">  
       <h1>YouWord</h1>
-  </div>           
-  </nav>
-    <div class="container-fluid">
-      <h2>English Dictionary</h2>
-      <p>Search your word.</p>
-    </div>
-    <nav class="navbar">
-      <div class="container-fluid">
-        <form method="post" action="/" class="d-flex">
-          <input class="form-control me-2" type="search" name="word" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
-      </div>
-    </nav>
-    <div class="card" style="width: 18rem;">
-      <div class="">
-        {% with messages = get_flashed_messages(with_categories=true) %}
-          {% if messages %}
-            {% for category, message in messages %}
-              {% if category == 'success'%}
-                <div class='alert alert-success mb-3' role='alert' >
-                    {{ message }}
-                </div>
+  </div>
+  <section>
+  
+    <div class="Search">
+        </nav>
+        <div class="container-fluid">
+          <h2>English Dictionary</h2>
+          <p>Search your word.</p>
+        </div>
+        <nav class="navbar">
+          <div class="container-fluid">
+            <form method="post" action="/" class="d-flex">
+              <input class="form-control me-2" type="search" name="word" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </nav>
+        <div class="card" style="width: 18rem;">
+          <div class="">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+              {% if messages %}
+                {% for category, message in messages %}
+                  {% if category == 'success'%}
+                    <div class='alert alert-success mb-3' role='alert' >
+                        {{ message }}
+                    </div>
+                  {% endif %}
+                  {% if category == 'error'%}
+                    <div class='alert alert-danger mb-3' role='alert' >
+                        {{ message }}
+                    </div>
+                  {% endif %}
+                  {% if category == 'nodata'%}
+                    <div class='alert alert-danger mb-3' role='alert' >
+                        {{ message }}
+                    </div>
+                  {% endif %}
+                {% endfor %}
               {% endif %}
-              {% if category == 'error'%}
-                <div class='alert alert-danger mb-3' role='alert' >
-                    {{ message }}
-                </div>
-              {% endif %}
-              {% if category == 'nodata'%}
-                <div class='alert alert-danger mb-3' role='alert' >
-                    {{ message }}
-                </div>
-              {% endif %}
-            {% endfor %}
-          {% endif %}
-        {% endwith %}
-      </div>
+            {% endwith %}
+          </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+          <img src="{{ image }}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h3 class="card-text">{{ search }}</h3>
+            <p class="card-text">{{ definition }}</p>
+          </div>
+        </div>
+
     </div>
-    <div class="card" style="width: 18rem;">
-      <img src="{{ image }}" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h3 class="card-text">{{ search }}</h3>
-        <p class="card-text">{{ definition }}</p>
+    <div class="lastfoursearches">
+      <h2>Last Searches</h2>
+      <div class="card mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="{{ imagen1 }}" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">{{ palabra1 }}</h5>
+              <p class="card-text">{{ definicion1 }}</p>
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+          </div>
+        </div>
       </div>
+      
+      <div class="card mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="{{ imagen2 }}" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">{{ palabra2 }}</h5>
+              <p class="card-text">{{ definicion2 }}</p>
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
+  
+
+  </section>           
+  
     <!-- Footer -->
       
            

@@ -1,3 +1,32 @@
+* {
+    box-sizing: border-box;
+    }
+div.Search {
+    float: left;
+    width: 50%;
+    /*height: 300px; /* only for demonstration, should be removed */
+    padding: 20px;
+    }
+div.lastfoursearches {
+    float: left;
+    padding: 20px;
+    width: 50%;
+    /*height: 300px; /* only for demonstration, should be removed */
+}
+
+/* Clear floats after the columns */
+section::after {
+content: "";
+display: table;
+clear: both;
+}
+@media (max-width: 600px) {
+div.Search, div.lastfoursearches {
+width: 100%;
+height: auto;
+}
+}
+
 h2 {text-align: center}
 h1 {text-align: center; color: blue}
 p {text-align: center;}
