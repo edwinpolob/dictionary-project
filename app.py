@@ -23,7 +23,7 @@ class Word (db.Model):
 @app.route('/')
 def index():
     image=os.path.join('static', 'YouWord.jpg')
-    return render_template('index.html', image=image)
+    return render_template('index.html', image=image, imagen1=image, imagen2=image, imagen3=image)
 
 
 @app.route("/", methods=['GET', 'POST'])
@@ -55,8 +55,11 @@ def search_word():
             palabra2=wordlist[-3:][0].word
             definicion2=wordlist[-3:][0].definition
             imagen2=wordlist[-3:][0].image
+            palabra3=wordlist[-4:][0].word
+            definicion3=wordlist[-4:][0].definition
+            imagen3=wordlist[-4:][0].image
             flash(u'Word sucessfully found!', 'success')
-            return render_template('index.html', search = search, definition=definition, image=image, palabra1=palabra1, definicion1=definicion1, imagen1=imagen1, palabra2=palabra2, definicion2=definicion2, imagen2=imagen2)
+            return render_template('index.html', search = search, definition=definition, image=image, palabra1=palabra1, definicion1=definicion1, imagen1=imagen1, palabra2=palabra2, definicion2=definicion2, imagen2=imagen2, palabra3=palabra3, definicion3=definicion3, imagen3=imagen3)
             if r.status_code== 404:
                 flash(u'Word not found!', 'error')
                 return render_template('index.html')

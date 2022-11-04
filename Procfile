@@ -1,1 +1,1 @@
-web: gunicorn dictionary_api:app
+web: gunicorn app:app
