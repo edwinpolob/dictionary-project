@@ -60,6 +60,7 @@ def search_word():
             imagen3=wordlist[-4:][0].image
             flash(u'Word sucessfully found!', 'success')
             return render_template('index.html', search = search, definition=definition, image=image, palabra1=palabra1, definicion1=definicion1, imagen1=imagen1, palabra2=palabra2, definicion2=definicion2, imagen2=imagen2, palabra3=palabra3, definicion3=definicion3, imagen3=imagen3)
+        else:
             if r.status_code== 404:
                 flash(u'Word not found!', 'error')
                 return render_template('index.html')
